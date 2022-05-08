@@ -1,12 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {connect} from "react-redux";
 import {Box, Button, Divider, Typography} from "@mui/material";
 import style from "./ChildButton.module.css"
 
 const Region = ({state}) => {
 
-    const [isShowInfoSubmets, setShowSubmetsInfo] = useState(false);
-    const [isShowInstanceIp, setShowInstanceIpInfo] = useState(false);
     return (
         <Box sx={{margin: 2}}>
             <Typography variant="h5">Region</Typography>
@@ -21,10 +19,7 @@ const Region = ({state}) => {
                             paddingTop: 5
                         }}
                                 onClick={() => {
-                                    setShowSubmetsInfo(true)
-                                    if (isShowInfoSubmets) {
-                                        alert(`Clicked on ${item.name}`)
-                                    }
+                                    alert(`Clicked on ${item.name}`)
                                 }}
                         >
                             <>
@@ -39,11 +34,8 @@ const Region = ({state}) => {
                                     <div style={{minHeight: "100%", marginTop: -10}}>
                                         {item.instanceIp.map((instanceIp, index) => (
                                             <div key={index} onClick={(e) => {
-                                                setShowInstanceIpInfo(true);
-                                                if (isShowInstanceIp) {
-                                                    alert(`Clicked on ${instanceIp}`)
-                                                    e.stopPropagation();
-                                                }
+                                                alert(`Clicked on ${instanceIp}`)
+                                                e.stopPropagation();
                                             }} className={style.block}></div>
                                         ))}
                                     </div>

@@ -10,6 +10,7 @@
 }
 .block:hover{
     background-color: red;
+    transition: .2s;
 }
 .block:not(:first-child){
     margin-top: -20px;
